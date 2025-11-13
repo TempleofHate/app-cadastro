@@ -1,10 +1,20 @@
 # Cadastro de Clientes
 
-Projeto simples de CRUD com autenticação.
-Como rodar:
-1. python3 -m venv .venv
-2. source .venv/bin/activate
-3. pip install -r requirements.txt
-4. python3 app.py
+Um sistema web simples e moderno para **gerenciamento de clientes** com **login de usuário.**
+Ideal para pequenas empresas e autônomos.
 
-http://127.0.0.1:5000
+**Tecnologias utilizadas:**
+
+Python (Flask)
+SQLite
+HTML + Bootstrap
+Deploy gratuito com Render
+
+**Funcionalidades:**
+Login de administrador
+Cadastro, edição e exclusão de clientes
+Interface responsiva (Bootstrap)
+Banco de dados leve e integrado
+
+Demo online: https://app-cadastro.onrender.com
+Código-fonte: https://github.com/TempleofHate/app-cadastro.git
