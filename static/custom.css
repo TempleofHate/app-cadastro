@@ -1,0 +1,4 @@
+body { padding-bottom: 60px; }
+.card { border: none; }
+.navbar-brand { font-weight: 600; }
+.table td, .table th { vertical-align: middle; }

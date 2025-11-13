@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title mb-3">Registrar usuário</h4>
+        <form method="post">
+          <div class="mb-3">
+            <label class="form-label">Usuário (ex: joaopedro)</label>
+            <input required name="username" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input required name="password" type="password" class="form-control" />
+          </div>
+          <button class="btn btn-success">Criar Conta</button>
+          <a href="{{ url_for('login') }}" class="btn btn-link">Já tenho conta</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

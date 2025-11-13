@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Clientes</h3>
+  <a class="btn btn-success" href="{{ url_for('route_adicionar') }}">➕ Adicionar Cliente</a>
+</div>
+
+{% if clientes %}
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped bg-white">
+      <thead class="table-primary">
+        <tr><th>ID</th><th>Nome</th><th>Email</th><th>Telefone</th><th>Observações</th><th>Ações</th></tr>
+      </thead>
+      <tbody>
+        {% for c in clientes %}
+        <tr>
+          <td>{{ c[0] }}</td>
+          <td>{{ c[1] }}</td>
+          <td>{{ c[2] or '-' }}</td>
+          <td>{{ c[3] or '-' }}</td>
+          <td>{{ c[4] or '-' }}</td>
+          <td>
+            <a class="btn btn-sm btn-outline-primary" href="{{ url_for('route_editar', cid=c[0]) }}">Editar</a>
+            <form class="d-inline" method="post" action="{{ url_for('route_remover', cid=c[0]) }}" onsubmit="return confirm('Remover cliente?');">
+              <button class="btn btn-sm btn-outline-danger">Remover</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  <div class="alert alert-info">Nenhum cliente cadastrado.</div>
+{% endif %}
+{% endblock %}
