@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from db import criar_tabelas, criar_usuario, validar_usuario, adicionar_cliente, listar_clientes, buscar_cliente, atualizar_cliente, remover_cliente
 
@@ -109,5 +110,6 @@ def route_remover(cid):
     return redirect(url_for("lista_clientes"))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
